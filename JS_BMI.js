@@ -1,19 +1,15 @@
 window.onload = () => {
     let button = document.querySelector("#btn");
 
-    // Function for calculating bmi
     button.addEventListener("click", calculateBMI);
 };
 
 function calculateBMI(){
-    /*Getting input from into heigh variable. Input is stirng so typecasting is nesseary*/
-
-    let height = parseInt(document.querySelector("#height").value);
-    let weight = parseInt(document.querySelector("#weight").value);
+    let height = Number(document.querySelector("#height").value);
+    let weight = Number(document.querySelector("#weight").value);
 
     let result = document.querySelector("#result");
 
-    // checking the user are they inputing a proper value or not
 
     if(height == "" || isNaN(height))
         result.innerHTML = "Provide a valid HEIGHT!!!";
@@ -21,7 +17,6 @@ function calculateBMI(){
     else if(weight == "" || isNaN(weight))
         result.innerHTML = "Provide a valid WEIGHT!!!";
 
-    // if both input is valid, calculate BMI
 
     else{
         let bmi = (weight / ((height*height)/ 10000)).toFixed(2);
